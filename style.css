@@ -1,0 +1,173 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+}
+
+:root {
+  font-size: 62.5%;
+  font-family: 'Roboto', sans-serif;
+
+  --text-color: #AFB6C2;
+  --hover-color: #8860E6;
+  --bg-color: #000000;
+}
+
+body {
+  height: 100vh;
+  display: grid;
+  place-content: center;
+  background-color: var(--bg-color);
+  
+}
+
+body, button {
+  color: var(--text-color);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+#app {
+  display: grid;
+  justify-items: center;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+}
+
+#toggle-theme {
+  position: fixed;
+  top:3rem;
+  right: 3rem;
+
+  font-size: 3rem;
+
+  background: transparent;
+}
+
+#toggle-theme:hover {
+  color: var(--hover-color);
+  transition: all .2s;
+}
+
+html.light {
+  --bg-color: #fff;
+  --text-color: #191816;
+  --hover-color: #191816;
+}
+
+html.light .ph-sun,
+html:not(.light) .ph-moon {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+
+.countdown {
+  font-size: 8rem;
+}
+
+#controls {
+  gap: 1rem;
+}
+
+#controls button {
+  width: 5rem;
+  height: 5rem;
+
+  border-radius: 50%;
+
+  background: transparent;
+
+  font-size: 3rem;
+}
+
+#controls button:hover, #buttons button:hover {
+  color: var(--hover-color);
+  -webkit-box-shadow:0px 0px 20px 5px var(--hover-color);
+  -moz-box-shadow: 0px 0px 20px 5px var(--hover-color);
+  box-shadow: 0px 0px 20px 5px var(--hover-color);
+
+  transition: all .2s;
+}
+
+#controls button:disabled {
+  opacity: 0.3;
+  cursor: inherit;
+}
+
+#controls button:disabled:hover{
+  color: lightgrey;
+  -webkit-box-shadow:none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+html.running .ph-play,
+html:not(.running) .ph-pause {
+  display: none;
+}
+
+#buttons {
+  display: grid;
+  grid-template-columns: repeat(2, clamp(9.8rem, 8.5rem + 4vw, 13.8rem));
+  grid-template-rows: repeat(2, clamp(11.2rem, 9.8rem + 4vw, 15.2rem));
+  gap: 3.2rem;
+
+  margin-top: 5rem;
+}
+
+#buttons button {
+  border: 1px solid var(--text-color);
+  border-radius: 1rem;
+  font-size: 3.2rem;
+
+  background-color: transparent;
+}
+
+#buttons button:hover {
+  scale: .95;
+  border: none;
+  transition: all .2s ease-in;
+}
+
+#buttons .clicked {
+  scale: .95;
+  border: none;
+  color: var(--hover-color);
+  
+  -webkit-box-shadow:0px 0px 20px 5px var(--hover-color);
+  -moz-box-shadow: 0px 0px 20px 5px var(--hover-color);
+  box-shadow: 0px 0px 20px 5px var(--hover-color);
+}
+
+@media (min-width: 640px) {
+  #app {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 5rem;
+  }
+  
+  #buttons {
+    margin-top: 0;
+  }
+}
