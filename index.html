@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Temporizador estilo Pomodoro">
+  <title>Focus Timer - Pomodoro</title>
+
+  <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-svg">
+
+  <link rel="stylesheet" href="./style.css">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <script type="module" src="./src/main.js" defer></script>
+</head>
+<body>
+
+  <button id="toggle-theme">
+    <span class="sr-only">Ativar light mode</span>
+    <i class="ph-bold ph-sun"></i>
+    <i class="ph-bold ph-moon hidden"></i>
+  </button>
+
+  <div id="app">
+
+    <section class="countdown">
+      <section id="timer" class="flex">
+        <span id="minutes">25</span>
+        <span>:</span>
+        <span id="seconds">00</span>
+      </section>
+  
+      <section id="controls" class="flex">
+        <button data-action="play" class="ph ph-play ">
+            <span class="sr-only">Iniciar contador</span>
+        </button>
+        <button data-action="pause" class="ph ph-pause hidden">
+            <span class="sr-only">Iniciar contador</span>
+        </button>
+        <button data-action="stop" class="ph ph-stop">
+            <span class="sr-only">Pausar contador</span>
+        </button>
+        <button data-action="plus" class="ph ph-plus" id="btnPlus">
+          <span class="sr-only">Ajustar tempo</span>
+        </button>
+        <button data-action="minus" class="ph ph-minus" id="btnMinus">
+            <span class="sr-only">Reiniciar contador</span>
+        </button>
+      </section>
+    </section>
+
+    <section id="buttons">
+      <button class="ph ph-tree-evergreen" id="forest">
+          <span class="sr-only">Som de uma floresta.</span>
+        </button>
+      <button class="ph ph-cloud-rain" id="rain" class="clicked">
+          <span class="sr-only">Som de chuva.</span>
+        </button>
+      <button class="ph ph-storefront" id="store">
+          <span class="sr-only">Som de pessoas em uma loja.</span>
+        </button>
+      <button class="ph ph-fire" id="fire">
+          <span class="sr-only">Som de uma fogueira.</span>
+        </button>
+    </section>
+  </div>
+  
+</body>
+</html>
